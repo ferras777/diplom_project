@@ -3,15 +3,12 @@ package helpers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import drivers.CustomWebDriver;
-import io.appium.java_client.MobileBy;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static config.ConfigHelper.*;
+import static config.ConfigHelper.getWebUrl;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
@@ -25,23 +22,6 @@ public class DriverHelper {
         Configuration.baseUrl = getWebUrl();
 
         Configuration.timeout = 10000;
-    }
-
-    /*
-        testid - good practice
-        https://docs.google.com/presentation/d/1jgn_L3Sb5mPAVHO1xJGtkBc6g6XpuCfBYcYaBXj4LTs
-        https://www.youtube.com/watch?v=w5EgCZgj5yE
-     */
-    public static By byTestId(String testId) {
-        if(isWeb()) {
-            return by("data-testid",  testId);
-        } else if (isAndroid()) {
-            return MobileBy.xpath("//*[@content-desc='" + testId + "']");
-        } else if (isIos()) {
-            return MobileBy.id(testId);
-        } else { // todo isDesktop
-            return by("some-desktop-attribute-name",  testId);
-        }
     }
 
     public static String getSessionId(){
