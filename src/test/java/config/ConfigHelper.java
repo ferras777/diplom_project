@@ -34,10 +34,7 @@ public class ConfigHelper {
         return getWebConfig().webBrowserScreenResolution();
     }
 
-    public static String getWebMobileDevice() {
-        return getWebConfig().webMobileDevice();
-    }
-
+    public static String getRemoteDriverUrl() { return getWebConfig().webRemoteDriverUrl(); }
 
     public static String getWebRemoteDriver() {
         return "https://" + getWebConfig().webRemoteDriverUser() + ":" +
@@ -50,7 +47,7 @@ public class ConfigHelper {
     }
 
     public static String getWebVideoStorage() {
-        return "https://" + getWebConfig().webVideoStorage() + "/video/";
+        return "https://" + getRemoteDriverUrl() + "/video/";
     }
 
     // for web, ios, android
