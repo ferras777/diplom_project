@@ -1,9 +1,11 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchResultsPage;
 
+@Tag("web")
 public class MainPageTest extends TestBase {
     private final MainPage mainPage = new MainPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();

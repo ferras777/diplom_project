@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
-    public SelenideElement searchInput = $(By.name("search"));
-    public SelenideElement searchButton = $(By.xpath("//*[contains(@class, 'search-bar')]//button"));
+    public SelenideElement
+            searchInput = $(By.name("search")),
+            searchButton = $(By.xpath("//*[contains(@class, 'search-bar')]//button"));
 }

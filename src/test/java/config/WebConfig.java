@@ -4,23 +4,33 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:local.properties",
-        "classpath:remote.properties"
+        "system:properties",
+//        "classpath:config/local.properties",
+        "classpath:config/web.properties"
 })
 public interface WebConfig extends Config {
+    @Key("web.url")
+    String webUrl();
 
-    @Key("search.url")
-    String searchUrl();
+    @Key("web.browser")
+    String webBrowser();
 
-    @Key("browser.version")
-    String browserVersion();
+    @Key("web.browser.screen.resolution")
+    String webBrowserScreenResolution();
 
-    @Key("browser.name")
-    String browserName();
+    @Key("web.mobile.device")
+    String webMobileDevice();
 
-    @Key("browser.size")
-    String browserSize();
+    @Key("web.remote.driver.url")
+    String webRemoteDriverUrl();
 
-    @Key("webdriver.remote")
-    String webdriverRemote();
+    @Key("web.remote.driver.user")
+    String webRemoteDriverUser();
+
+    @Key("web.remote.driver.password")
+    String webRemoteDriverPassword();
+
+    @Key("web.video.storage")
+    String webVideoStorage();
+
 }
