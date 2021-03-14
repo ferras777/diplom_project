@@ -9,6 +9,11 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchResultsPage;
 
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.open;
+import static config.ConfigHelper.getWebUrl;
+import static io.qameta.allure.Allure.step;
+
 @Tag("web")
 @Feature("Authorization")
 public class MainPageTest extends TestBase {
@@ -22,8 +27,7 @@ public class MainPageTest extends TestBase {
     @Tag("mainPage")
     @DisplayName("Valid open main page")
     public void search() {
-        mainPage.searchInput.setValue("Xiaomi");
-        mainPage.searchButton.click();
-        searchResultsPage.searchResults.shouldHaveSize(36);
+        step("Open Main page", () -> open(getWebUrl()));
+        step("Check is main page open", () -> mainPage.searchInput.shouldBe(visible));
     }
 }
