@@ -15,6 +15,7 @@ import static config.ConfigHelper.getWebUrl;
 import static io.qameta.allure.Allure.step;
 
 @Tag("web")
+@Owner("IMalykh")
 @Feature("Authorization")
 public class MainPageTest extends TestBase {
     private final MainPage mainPage = new MainPage();
@@ -22,7 +23,6 @@ public class MainPageTest extends TestBase {
 
     @Test
     @AllureId("1900")
-    @Owner("IMalykh")
     @Feature("Main page")
     @Tag("mainPage")
     @DisplayName("Valid open main page")
