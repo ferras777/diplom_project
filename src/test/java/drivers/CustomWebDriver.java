@@ -14,8 +14,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 
 import static config.ConfigHelper.*;
@@ -54,13 +52,7 @@ public class CustomWebDriver implements WebDriverProvider {
 
     private ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
-
-        if (!getWebMobileDevice().equals("")) {
-            Map<String, Object> mobileDevice = new HashMap<>();
-            mobileDevice.put("deviceName", getWebMobileDevice());
-            chromeOptions.setExperimentalOption("mobileEmulation", mobileDevice);
-        }
-        chromeOptions.addArguments("--window-size=" + getWebBrowserScreenResolution());
+        chromeOptions.addArguments("--window-size=1920x1080");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-infobars");
