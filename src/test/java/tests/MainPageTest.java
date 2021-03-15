@@ -1,6 +1,5 @@
 package tests;
 
-import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -14,17 +13,14 @@ import static com.codeborne.selenide.Selenide.open;
 import static config.ConfigHelper.getWebUrl;
 import static io.qameta.allure.Allure.step;
 
-@Tag("web")
-@Owner("IMalykh")
-@Feature("Authorization")
 public class MainPageTest extends TestBase {
     private final MainPage mainPage = new MainPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();
 
     @Test
-    @AllureId("1900")
     @Feature("Main page")
-    @Tag("mainPage")
+    @Tag("web")
+    @Owner("IMalykh")
     @DisplayName("Valid open main page")
     public void search() {
         step("Open Main page", () -> open(getWebUrl()));

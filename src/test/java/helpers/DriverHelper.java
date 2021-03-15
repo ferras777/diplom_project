@@ -15,12 +15,11 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class DriverHelper {
 
     public static void configureDriver() {
-        addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true).savePageSource(true));
+        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
 
         Configuration.browser = CustomWebDriver.class.getName();
         Configuration.baseUrl = getWebUrl();
-
+        Configuration.browserSize = "1920x1080";
         Configuration.timeout = 10000;
     }
 
@@ -31,8 +30,4 @@ public class DriverHelper {
     public static String getConsoleLogs() {
         return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
     }
-
-//    public static String getNetworkLogs() {
-//        todo https://ru.selenide.org/2019/12/18/advent-calendar-network-logs-with-proxy/
-//    }
 }
