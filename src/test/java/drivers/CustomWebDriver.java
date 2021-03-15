@@ -3,7 +3,6 @@ package drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,7 +18,7 @@ import static config.ConfigHelper.*;
 
 public class CustomWebDriver implements WebDriverProvider {
     @Override
-    public @NotNull WebDriver createDriver(@NotNull DesiredCapabilities capabilities) {
+    public WebDriver createDriver(DesiredCapabilities capabilities) {
         addListener("AllureSelenide", new AllureSelenide().screenshots(false).savePageSource(false));
 
         capabilities.setCapability("enableVNC", true);
