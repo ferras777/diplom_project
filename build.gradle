@@ -1,3 +1,9 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
 plugins {
     id 'java-library'
     id 'application'
@@ -8,9 +14,6 @@ repositories {
     maven {url = "https://dl.bintray.com/qameta/maven-unstable/"}
     mavenCentral()
 }
-
-group 'ozon.app'
-version '1.0'
 
 def allureVersion = "2.13.8",
     selenideVersion = "5.18.0",
@@ -53,7 +56,19 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
-    println "Tests started for " + System.getProperty("environment") + " environment"
+    println "Tests started for " + System.getProperty("web.url") + " environment"
+
+    testLogging {
+        lifecycle {
+            events "passed", "failed"
+//            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task web(type: Test) {
