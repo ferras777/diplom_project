@@ -3,6 +3,7 @@ package drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +19,7 @@ import static config.ConfigHelper.*;
 
 public class CustomWebDriver implements WebDriverProvider {
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public @NotNull WebDriver createDriver(@NotNull DesiredCapabilities capabilities) {
         addListener("AllureSelenide", new AllureSelenide().screenshots(false).savePageSource(false));
 
         capabilities.setCapability("enableVNC", true);
@@ -35,6 +36,8 @@ public class CustomWebDriver implements WebDriverProvider {
                     capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
                     WebDriverManager.chromedriver().setup();
                     break;
+                default:
+                    throw new IllegalStateException("Wrong browser name: " + getWebBrowser());
             }
             return getRemoteWebDriver(capabilities);
         } else {
@@ -60,7 +63,6 @@ public class CustomWebDriver implements WebDriverProvider {
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--disable-gpu");
-//        chromeOptions.addArguments("--headless");
 
         return chromeOptions;
     }
