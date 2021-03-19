@@ -10,6 +10,9 @@
 * Jenkins
     * [Ссылка на джобу](https://jenkins.autotests.cloud/job/c03-ferras-lesson21/)
 * Jira
+* Report
+    * Telegram
+    * Mattermost
 ___
 ### Selenoid
 ![selenoid screenshot](src/test/resources/images/selenoid.gif)
