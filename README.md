@@ -21,10 +21,13 @@ ___
 ![allure screenshot](src/test/resources/images/allure_1.png)
 ___
 ### Allure TestOps
+**Dashboard**
 ![allure screenshot](src/test/resources/images/allure_testops1.png)
 ***
+**Test cases**
 ![allure screenshot](src/test/resources/images/allure_testops.png)
 ***
+**Job launch**
 ![allure screenshot](src/test/resources/images/allure_testops2.png)
 ___
 ### Jira
