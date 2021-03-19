@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +20,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Main page")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1983")
     @DisplayName("Valid open main page")
     public void check_main_page_available() {
         step("Open Main page", () -> open(getWebUrl()));
@@ -30,8 +32,9 @@ public class WildberriesTest extends TestBase {
     @Feature("Search page")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1986")
     @DisplayName("Check search items size on search page")
-    public void check_search_for_product() {
+    public void check_search_items_size_on_search_page() {
         step("Open main page", () -> open(getWebUrl()));
         step("Enter product name", () -> $("#tbSrch").shouldBe(visible).setValue("Xiaomi"));
         step("Click search button", () -> $("#btnSrch").shouldBe(visible).click());
@@ -43,6 +46,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Main Page")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1985")
     @DisplayName("Check banner visible on main page")
     public void check_banner_visible_on_main_page() {
         step("Open main page", () -> open(getWebUrl()));
@@ -54,6 +58,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Authorization")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1982")
     @DisplayName("Check get sms code button visible")
     public void check_get_sms_code_button_visible() {
         step("Open main page", () -> open(getWebUrl()));
@@ -67,6 +72,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Cart")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1981")
     @DisplayName("Check cart button visible and enter into cart")
     public void check_cart_button_visible_and_enter_into_cart() {
         step("Open main page", () -> open(getWebUrl()));
@@ -80,6 +86,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Buy")
     @Tag("web")
     @Owner("IMalykh")
+    @AllureId("1984")
     @DisplayName("Add product in cart")
     public void add_product_in_cart() {
         step("Open main page", () -> open(getWebUrl()));
@@ -87,7 +94,7 @@ public class WildberriesTest extends TestBase {
         step("Click search button", () -> $("#btnSrch").shouldBe(visible).click());
         step("Click on first product card", () -> $(".j-card-item").click());
         step("Click on add to cart button", () -> $(byText("Добавить в корзину")).click());
-        step("Button go in cart should be visible", () -> $(byText("Перейти в корзину")).shouldBe(visible));
+        step("Button go in cart visible", () -> $(byText("Перейти в корзину")).shouldBe(visible));
         step("Click on cart icon", () -> $(".my-basket").shouldBe(visible)).click();
 
         step("Product should be added to cart",
