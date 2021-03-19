@@ -6,14 +6,6 @@ import static java.lang.Boolean.parseBoolean;
 
 public class ConfigHelper {
 
-    public static String getPlatform() {
-        return System.getProperty("platform");
-    }
-
-    public static boolean isWeb() {
-        return getPlatform().equals("web");
-    }
-
     public static String getWebUrl() {
         return getWebConfig().webUrl();
     }
@@ -38,7 +30,6 @@ public class ConfigHelper {
         return "https://" + getRemoteDriverUrl() + "/video/";
     }
 
-    // for web, ios, android
     public static boolean isVideoOn() {
         return parseBoolean(System.getProperty("video"));
     }
