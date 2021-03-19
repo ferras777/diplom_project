@@ -83,7 +83,7 @@ public class WildberriesTest extends TestBase {
     }
 
     @Test
-    @Feature("Buy")
+    @Feature("Cart")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1984")
@@ -99,5 +99,24 @@ public class WildberriesTest extends TestBase {
 
         step("Product should be added to cart",
                 () -> $(".list-item-wrap").shouldBe(visible));
+    }
+
+    @Test
+    @Feature("Cart")
+    @Tag("web")
+    @Owner("IMalykh")
+    @AllureId("1990")
+    @DisplayName("Add product in cart failed")
+    public void add_product_in_cart_failed() {
+        step("Open main page", () -> open(getWebUrl()));
+        step("Enter product name", () -> $("#tbSrch").shouldBe(visible).setValue("Xiaomi"));
+        step("Click search button", () -> $("#btnSrch").shouldBe(visible).click());
+        step("Click on first product card", () -> $(".j-card-item").click());
+        step("Click on add to cart button", () -> $(".order")).click();
+        step("Button go in cart visible", () -> $(byText("Перейти в корзину")).shouldBe(visible));
+        step("Click on cart icon", () -> $(".my-basket").shouldBe(visible)).click();
+
+        step("Product should be added to cart",
+                () -> $(".list-item-wrap").shouldBe());
     }
 }
