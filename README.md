@@ -1,29 +1,31 @@
-Github Repo
-https://github.com/svasenkov/pure_tests
-
-Jenkins job
-https://jenkins.autotests.cloud/job/svasenkov_pure_tests/
-
-Selenoid
-![selenoid screenshot](src/test/resources/images/selenoid.png)
+## Autotests for Wildberries.ru
+### Stack
+* Java 
+* Gradle
+* Junit5 
+* Selenide 
+* Allure Report
+* Allure TestOps
+* Selenoid
+* Jenkins
+    * [Ссылка на джобу](https://jenkins.autotests.cloud/job/c03-ferras-lesson21/)
+* Jira
+___
+###Selenoid
 ![selenoid screenshot](src/test/resources/images/selenoid.gif)
-
-Allure Report
+___
+###Allure Report
 ![allure screenshot](src/test/resources/images/allure_1.png)
-![allure screenshot](src/test/resources/images/allure_2.png)
-![allure screenshot](src/test/resources/images/allure_3.png)
-
-Allure TestOps
-![allure screenshot](src/test/resources/images/allure_testops_0.png)
+___
+###Allure TestOps
 ![allure screenshot](src/test/resources/images/allure_testops.png)
-![allure screenshot](src/test/resources/images/allure_testops_testplan.png)
-![allure screenshot](src/test/resources/images/allure_testops_testplan_executors.png)
-
-Jira
-![allure screenshot](src/test/resources/images/jira_1.png)
-![allure screenshot](src/test/resources/images/jira_2.png)
-![allure screenshot](src/test/resources/images/error.png)
-
-Telegram notification
-
+![allure screenshot](src/test/resources/images/allure_testops1.png)
+___
+###Jira
+![allure screenshot](src/test/resources/images/Jira_1.png)
+___
+###Mattermost notification
+![allure screenshot](src/test/resources/images/mattermost.png)
+___
+###Telegram notification
 ![allure screenshot](src/test/resources/images/telegram.png)

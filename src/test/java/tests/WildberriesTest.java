@@ -43,7 +43,7 @@ public class WildberriesTest extends TestBase {
     }
 
     @Test
-    @Feature("Main Page")
+    @Feature("Main page")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1985")
