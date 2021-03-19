@@ -11,21 +11,21 @@
     * [Ссылка на джобу](https://jenkins.autotests.cloud/job/c03-ferras-lesson21/)
 * Jira
 ___
-###Selenoid
+### Selenoid
 ![selenoid screenshot](src/test/resources/images/selenoid.gif)
 ___
-###Allure Report
+### Allure Report
 ![allure screenshot](src/test/resources/images/allure_1.png)
 ___
-###Allure TestOps
+### Allure TestOps
 ![allure screenshot](src/test/resources/images/allure_testops.png)
 ![allure screenshot](src/test/resources/images/allure_testops1.png)
 ___
-###Jira
+### Jira
 ![allure screenshot](src/test/resources/images/Jira_1.png)
 ___
-###Mattermost notification
+### Mattermost notification
 ![allure screenshot](src/test/resources/images/mattermost.png)
 ___
-###Telegram notification
+### Telegram notification
 ![allure screenshot](src/test/resources/images/telegram.png)
