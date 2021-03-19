@@ -105,7 +105,7 @@ public class WildberriesTest extends TestBase {
     @Feature("Cart")
     @Tag("web")
     @Owner("IMalykh")
-    @AllureId("1990")
+    @AllureId("1987")
     @DisplayName("Add product in cart failed")
     public void add_product_in_cart_failed() {
         step("Open main page", () -> open(getWebUrl()));
