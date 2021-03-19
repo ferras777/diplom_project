@@ -22,7 +22,9 @@ ___
 ___
 ### Allure TestOps
 ![allure screenshot](src/test/resources/images/allure_testops1.png)
+***
 ![allure screenshot](src/test/resources/images/allure_testops.png)
+***
 ![allure screenshot](src/test/resources/images/allure_testops2.png)
 ___
 ### Jira
