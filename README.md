@@ -15,26 +15,26 @@
     * Mattermost
 ___
 ### Selenoid
-![selenoid screenshot](src/test/resources/images/selenoid.gif)
+![selenoid screenshot](./images/selenoid.gif)
 ___
 ### Allure Report
-![allure screenshot](src/test/resources/images/allure_1.png)
+![allure screenshot](./images/allure_1.png)
 ___
 ### Allure TestOps
 #### `Dashboard`
-![allure screenshot](src/test/resources/images/allure_testops1.png)
+![allure screenshot](./images/allure_testops1.png)
 ***
 #### `Test cases`
-![allure screenshot](src/test/resources/images/allure_testops.png)
+![allure screenshot](./images/allure_testops.png)
 ***
 #### `Job launch`
-![allure screenshot](src/test/resources/images/allure_testops2.png)
+![allure screenshot](./images/allure_testops2.png)
 ___
 ### Jira
-![allure screenshot](src/test/resources/images/Jira_1.png)
+![allure screenshot](./images/Jira_1.png)
 ___
 ### Mattermost notification
-![allure screenshot](src/test/resources/images/mattermost.png)
+![allure screenshot](./images/mattermost.png)
 ___
 ### Telegram notification
-![allure screenshot](src/test/resources/images/telegram.png)
+![allure screenshot](./images/telegram.png)
