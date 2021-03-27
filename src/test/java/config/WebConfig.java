@@ -14,9 +14,6 @@ public interface WebConfig extends Config {
     @Key("web.browser")
     String webBrowser();
 
-    @Key("web.browser.screen.resolution")
-    String webBrowserScreenResolution();
-
     @Key("remote.driver.url")
     String webRemoteDriverUrl();
 

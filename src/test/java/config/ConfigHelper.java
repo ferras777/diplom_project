@@ -1,5 +1,6 @@
 package config;
 
+import api.config.ApiConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 import static java.lang.Boolean.parseBoolean;
@@ -34,7 +35,13 @@ public class ConfigHelper {
         return parseBoolean(System.getProperty("video"));
     }
 
+    public static String getApiUrl() { return getApiConfig().apiUrl(); }
+
     private static WebConfig getWebConfig() {
         return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
+    }
+
+    private static ApiConfig getApiConfig() {
+        return ConfigFactory.newInstance().create(ApiConfig.class, System.getProperties());
     }
 }
