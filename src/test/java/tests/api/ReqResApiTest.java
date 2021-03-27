@@ -1,8 +1,10 @@
 package tests.api;
 
 import api.model.User;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -20,10 +22,12 @@ import static org.hamcrest.Matchers.is;
 public class ReqResApiTest extends ApiTestBase{
 
     @Test
-    @Feature("API")
+    @Story("API")
+    @Feature("Check model")
     @Tag("api")
     @Owner("IMalykh")
-    @DisplayName("Check user Model without spec")
+    @AllureId("2048")
+    @DisplayName("Check user model without spec")
     void checkUserRightModelWithoutSpec() {
         User user = extractUserAfterRequest(2);
 
@@ -34,9 +38,11 @@ public class ReqResApiTest extends ApiTestBase{
     }
 
     @Test
-    @Feature("API")
+    @Story("API")
+    @Feature("Check registration")
     @Tag("api")
     @Owner("IMalykh")
+    @AllureId("2050")
     @DisplayName("Check register user with spec")
     void checkRegisterUserWithSpec() {
         HashMap<String, Object> map = new HashMap<>();
@@ -52,9 +58,11 @@ public class ReqResApiTest extends ApiTestBase{
     }
 
     @Test
-    @Feature("API")
+    @Story("API")
+    @Feature("Check list user")
     @Tag("api")
     @Owner("IMalykh")
+    @AllureId("2049")
     @DisplayName("Check list user status code with spec")
     void checkListUserStatusCodeWithSpec() {
         spec().request()
