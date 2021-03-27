@@ -1,4 +1,5 @@
 ## Autotests for Wildberries.ru
+API and UI
 ### Stack
 * Java 
 * Gradle
@@ -6,6 +7,7 @@
 * Selenide 
 * Allure Report
 * Allure TestOps
+* Rest-assured
 * Selenoid
 * Jenkins
     * [Ссылка на джобу](https://jenkins.autotests.cloud/job/c03-ferras-lesson21/)
