@@ -3,6 +3,7 @@ package tests.web;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,8 @@ import static io.qameta.allure.Allure.step;
 public class WildberriesTest extends WebTestBase {
 
     @Test
-    @Feature("Main page")
+    @Feature("UI")
+    @Story("Main")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1983")
@@ -29,7 +31,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Search page")
+    @Feature("UI")
+    @Story("Search")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1986")
@@ -43,7 +46,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Main page")
+    @Feature("UI")
+    @Story("Main")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1985")
@@ -55,7 +59,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Authorization")
+    @Feature("UI")
+    @Story("Authorization")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1982")
@@ -69,7 +74,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Cart")
+    @Feature("UI")
+    @Story("Cart")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1981")
@@ -83,7 +89,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Cart")
+    @Feature("UI")
+    @Story("Cart")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1984")
@@ -102,7 +109,8 @@ public class WildberriesTest extends WebTestBase {
     }
 
     @Test
-    @Feature("Cart")
+    @Feature("UI")
+    @Story("Cart")
     @Tag("web")
     @Owner("IMalykh")
     @AllureId("1987")

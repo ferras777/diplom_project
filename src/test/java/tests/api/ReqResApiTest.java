@@ -22,8 +22,8 @@ import static org.hamcrest.Matchers.is;
 public class ReqResApiTest extends ApiTestBase{
 
     @Test
-    @Story("API")
-    @Feature("Check model")
+    @Feature("API")
+    @Story("Check model")
     @Tag("api")
     @Owner("IMalykh")
     @AllureId("2048")
@@ -38,8 +38,8 @@ public class ReqResApiTest extends ApiTestBase{
     }
 
     @Test
-    @Story("API")
-    @Feature("Check registration")
+    @Feature("API")
+    @Story("Check registration")
     @Tag("api")
     @Owner("IMalykh")
     @AllureId("2050")
@@ -58,8 +58,8 @@ public class ReqResApiTest extends ApiTestBase{
     }
 
     @Test
-    @Story("API")
-    @Feature("Check list user")
+    @Story("Check list users")
+    @Feature("API")
     @Tag("api")
     @Owner("IMalykh")
     @AllureId("2049")
