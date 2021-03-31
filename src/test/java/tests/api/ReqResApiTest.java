@@ -76,6 +76,7 @@ public class ReqResApiTest extends ApiTestBase{
     @Feature("authorization")
     @Tag("api")
     @Owner("IMalykh")
+    @AllureId("2087")
     @DisplayName("Successful login user with model")
     void successfulLoginUserWithModel() throws JsonProcessingException {
         Login login = new Login("eve.holt@reqres.in", "cityslicka");
