@@ -1,4 +1,4 @@
-package tests.web;
+package tests.ui;
 
 import io.qameta.allure.junit5.AllureJunit5;
 import org.junit.jupiter.api.AfterEach;
@@ -6,9 +6,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static config.ConfigHelper.isVideoOn;
-import static web.helpers.AttachmentsHelper.*;
-import static web.helpers.DriverHelper.*;
+import static ui.config.WebConfigHelper.getWebBrowser;
+import static ui.config.WebConfigHelper.isVideoOn;
+import static ui.helpers.AttachmentsHelper.*;
+import static ui.helpers.DriverHelper.*;
 
 @ExtendWith(AllureJunit5.class)
 public class WebTestBase {
@@ -22,7 +23,9 @@ public class WebTestBase {
     public void addAttachments() {
         attachScreenshot("Last screenshot");
         attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs());
+        if (getWebBrowser().equals("chrome")) {
+            attachAsText("Browser console logs", getConsoleLogs());
+        }
         if (isVideoOn()) {
             attachVideo(getSessionId());
         }

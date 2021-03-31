@@ -3,21 +3,23 @@ package api.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "url",
-        "text"
+        "email",
+        "password"
 })
 @Getter
 @Setter
-public class Support {
+@AllArgsConstructor
+public class Login {
 
-    @JsonProperty("url")
-    private String url;
+    @JsonProperty("email")
+    private String email;
 
-    @JsonProperty("text")
-    private String text;
+    @JsonProperty("password")
+    private String password;
 }

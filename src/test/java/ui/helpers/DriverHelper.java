@@ -1,14 +1,14 @@
-package web.helpers;
+package ui.helpers;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import web.drivers.CustomWebDriver;
+import ui.drivers.CustomWebDriver;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static config.ConfigHelper.getWebUrl;
+import static ui.config.WebConfigHelper.getWebUrl;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
@@ -20,7 +20,6 @@ public class DriverHelper {
         Configuration.browser = CustomWebDriver.class.getName();
         Configuration.baseUrl = getWebUrl();
         Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 10000;
     }
 
     public static String getSessionId(){

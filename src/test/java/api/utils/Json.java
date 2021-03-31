@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
-public class JsonMapper {
-    private static final Logger LOG = LoggerFactory.getLogger(JsonMapper.class);
+public class Json {
+    private static final Logger LOG = LoggerFactory.getLogger(Json.class);
 
     public static String convertMapToJson(Map<String, Object> map) {
         ObjectMapper mapper = new ObjectMapper();
@@ -19,5 +19,11 @@ public class JsonMapper {
             LOG.error("Не удалось преобразовать map в Json", e);
         }
         return json;
+    }
+
+    public static String convertPOJOToJSON(Object pojo) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.writeValueAsString(pojo);
     }
 }

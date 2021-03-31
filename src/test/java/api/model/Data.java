@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
+import lombok.Setter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -14,16 +15,21 @@ import lombok.Getter;
         "avatar"
 })
 @Getter
+@Setter
 public class Data {
 
     @JsonProperty("id")
     private int id;
+
     @JsonProperty("email")
     private String email;
+
     @JsonProperty("first_name")
     private String firstName;
+
     @JsonProperty("last_name")
     private String lastName;
+
     @JsonProperty("avatar")
     private String avatar;
 }

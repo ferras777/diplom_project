@@ -16,32 +16,38 @@ repositories {
 }
 
 def allureVersion = "2.13.8",
-    selenideVersion = "5.18.0",
+    selenideVersion = "5.20.1",
     junitVersion = "5.7.0"
 
 allure {
     version = "${allureVersion}"
     autoconfigure = true
     aspectjweaver = true
+    configuration = "testImplementation"
+
     useJUnit5 {
         version = "${allureVersion}"
     }
 }
 
 dependencies {
-    testImplementation "io.qameta.allure:allure-java-commons:2.13.5"
-    testImplementation "io.qameta.allure:allure-rest-assured:2.13.5"
+    testImplementation "com.codeborne:selenide:${selenideVersion}"
+
+    testImplementation "io.qameta.allure:allure-selenide:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-ee-junit-platform:3.28.2"
+
     testImplementation "io.rest-assured:rest-assured:4.2.0"
     testImplementation "com.fasterxml.jackson.core:jackson-databind:2.11.2"
-    testImplementation "org.aspectj:aspectjweaver:1.9.5"
-    testImplementation "com.codeborne:selenide:${selenideVersion}"
-    testImplementation "io.qameta.allure:allure-selenide:${allureVersion}"
-    testImplementation "io.qameta.allure:allure-ee-junit-platform:3.28.2"
-    testImplementation "ch.qos.logback:logback-classic:1.2.3"
-    testImplementation "org.aeonbits.owner:owner:1.0.12"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+
     testCompileOnly "org.projectlombok:lombok:1.18.18"
     testAnnotationProcessor "org.projectlombok:lombok:1.18.18"
+
+    testImplementation "org.aeonbits.owner:owner:1.0.12"
+    testImplementation "ch.qos.logback:logback-classic:1.2.3"
+    testImplementation "org.aspectj:aspectjweaver:1.9.5"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 }
 
@@ -58,8 +64,8 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.enabled'                 : true,
                 'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
                 'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+                'junit.jupiter.execution.parallel.web.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.web.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
     testLogging {
@@ -79,12 +85,10 @@ task web(type: Test) {
     useJUnitPlatform {
         includeTags 'web'
     }
-    systemProperty 'platform', 'web'
 }
 
 task api(type: Test) {
     useJUnitPlatform {
         includeTags 'api'
     }
-    systemProperty 'platform', 'api'
 }
