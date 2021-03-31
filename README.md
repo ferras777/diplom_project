@@ -8,6 +8,7 @@ API and UI
 * Allure Report
 * Allure TestOps
 * Rest-assured
+* Lombok
 * Selenoid
 * Jenkins
     * [Ссылка на джобу](https://jenkins.autotests.cloud/job/c03-ferras-lesson21/)
