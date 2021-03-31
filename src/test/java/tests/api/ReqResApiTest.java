@@ -9,34 +9,34 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.HashMap;
 
 import static api.spec.CustomSpec.spec;
+import static api.steps.ApiSteps.checkUserModel;
 import static api.steps.ApiSteps.extractUserAfterRequest;
 import static api.utils.Json.convertMapToJson;
 import static api.utils.Json.convertPOJOToJSON;
 import static org.apache.http.HttpStatus.SC_OK;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 @DisplayName("Api Tests")
 public class ReqResApiTest extends ApiTestBase{
 
-    @Test
+    @ParameterizedTest(name = "{displayName} {argumentsWithNames}")
+    @ValueSource(ints = {1, 2, 3})
     @Feature("User model")
     @Tag("api")
     @Owner("IMalykh")
     @AllureId("2048")
-    @DisplayName("Check user model without spec")
-    void checkUserRightModelWithoutSpec() {
-        User user = extractUserAfterRequest(2);
+    @DisplayName("Check user right model with ID#")
+    void checkUserRightModelWithoutSpec(int ID) {
+        User user = extractUserAfterRequest(ID);
 
-        assertThat(user.getData().getFirstName(), is("Janet"));
-        assertThat(user.getData().getId(), is(2));
-        assertThat(user.getData().getLastName(), is("Weaver"));
-        assertThat(user.getData().getEmail(), is("janet.weaver@reqres.in"));
+        checkUserModel(user);
     }
 
     @Test
@@ -69,7 +69,8 @@ public class ReqResApiTest extends ApiTestBase{
             .get("/users?page=2")
         .then()
             .log().body()
-            .statusCode(SC_OK);
+            .statusCode(SC_OK)
+            .body(notNullValue());
     }
 
     @Test
