@@ -1,12 +1,14 @@
-## Autotests for Wildberries.ru
-UI 
-### Stack
+## Diploma project | QA.guru
+UI tests for Wildberries.ru  
+API tests for reqres.in
+### Dependencies
 * Java 
 * Gradle
 * Junit5 
 * Selenide
 * Rest-assured
 * Lombok
+### Environment
 * Report
   * Allure Report
   * Allure TestOps
