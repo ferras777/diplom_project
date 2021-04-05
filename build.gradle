@@ -17,7 +17,12 @@ repositories {
 
 def allureVersion = "2.13.8",
     selenideVersion = "5.20.1",
-    junitVersion = "5.7.0"
+    junitVersion = "5.7.0",
+    allureEE = "3.39.5",
+    restAssured = "4.2.0",
+    jackson = "2.11.2",
+    lombok = "1.18.18"
+
 
 allure {
     version = "${allureVersion}"
@@ -35,13 +40,13 @@ dependencies {
 
     testImplementation "io.qameta.allure:allure-selenide:${allureVersion}"
     testImplementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
-    testImplementation "io.qameta.allure:allure-ee-junit-platform:3.28.2"
+    testImplementation "io.qameta.allure:allure-ee-junit-platform:${allureEE}"
 
-    testImplementation "io.rest-assured:rest-assured:4.2.0"
-    testImplementation "com.fasterxml.jackson.core:jackson-databind:2.11.2"
+    testImplementation "io.rest-assured:rest-assured:${restAssured}"
+    testImplementation "com.fasterxml.jackson.core:jackson-databind:${jackson}"
 
-    testCompileOnly "org.projectlombok:lombok:1.18.18"
-    testAnnotationProcessor "org.projectlombok:lombok:1.18.18"
+    testCompileOnly "org.projectlombok:lombok:${lombok}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombok}"
 
     testImplementation "org.aeonbits.owner:owner:1.0.12"
     testImplementation "ch.qos.logback:logback-classic:1.2.3"
