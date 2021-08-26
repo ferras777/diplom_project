@@ -1,6 +1,10 @@
 ## Diploma project | QA.guru
-UI diplom.autotests.diplom.tests for Wildberries.ru  
-API diplom.autotests.diplom.tests for reqres.in
+- UI for Wildberries.ru  
+- API for reqres.in  
+#### Commands
+- All tests ```gradle clean test``` 
+- UI tests ```gradle clean web``` 
+- API tests ```gradle clean api``` 
 ### Dependencies
 * Java 
 * Gradle
