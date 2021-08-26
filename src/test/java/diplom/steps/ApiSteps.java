@@ -1,6 +1,6 @@
-package api.steps;
+package diplom.steps;
 
-import api.model.User;
+import diplom.model.User;
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 

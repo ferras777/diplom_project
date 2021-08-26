@@ -1,4 +1,4 @@
-package api.utils;
+package diplom.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

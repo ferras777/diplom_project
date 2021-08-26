@@ -1,4 +1,4 @@
-package tests.ui;
+package diplom.tests.ui;
 
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
@@ -7,12 +7,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
-import static ui.config.WebConfigHelper.getWebUrl;
+import static diplom.config.WebConfigHelper.getWebUrl;
 
 @DisplayName("UI Tests")
 public class WildberriesTest extends WebTestBase {
@@ -40,7 +41,7 @@ public class WildberriesTest extends WebTestBase {
         step("Enter product name", () -> $("#tbSrch").setValue("Xiaomi"));
         step("Click search button", () -> $("#btnSrch").click());
 
-        step("Search items size should be 100", () -> $$(".j-card-item").shouldHaveSize(100));
+        step("Search items size should be 100", () -> $$(".j-card-item").shouldHave(size(100)));
     }
 
     @Test

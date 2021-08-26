@@ -1,6 +1,6 @@
 ## Diploma project | QA.guru
-UI tests for Wildberries.ru  
-API tests for reqres.in
+UI diplom.autotests.diplom.tests for Wildberries.ru  
+API diplom.autotests.diplom.tests for reqres.in
 ### Dependencies
 * Java 
 * Gradle

@@ -1,4 +1,4 @@
-package ui.drivers;
+package diplom.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static ui.config.WebConfigHelper.*;
+import static diplom.config.WebConfigHelper.*;
 
 public class CustomWebDriver implements WebDriverProvider {
     @Override

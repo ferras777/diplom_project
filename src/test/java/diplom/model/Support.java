@@ -1,4 +1,4 @@
-package api.model;
+package diplom.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,16 +8,16 @@ import lombok.Setter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "data",
-        "support"
+        "url",
+        "text"
 })
 @Getter
 @Setter
-public class User {
+public class Support {
 
-    @JsonProperty("data")
-    private Data data;
+    @JsonProperty("url")
+    private String url;
 
-    @JsonProperty("support")
-    private Support support;
+    @JsonProperty("text")
+    private String text;
 }

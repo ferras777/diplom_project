@@ -1,14 +1,14 @@
-package ui.helpers;
+package diplom.helpers;
 
+import diplom.drivers.CustomWebDriver;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import ui.drivers.CustomWebDriver;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import static diplom.config.WebConfigHelper.getWebUrl;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static ui.config.WebConfigHelper.getWebUrl;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 

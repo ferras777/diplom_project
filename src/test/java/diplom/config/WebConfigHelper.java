@@ -1,4 +1,4 @@
-package ui.config;
+package diplom.config;
 
 import org.aeonbits.owner.ConfigFactory;
 

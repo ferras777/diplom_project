@@ -1,25 +1,23 @@
-package api.model;
+package diplom.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "email",
-        "password"
+        "data",
+        "support"
 })
 @Getter
 @Setter
-@AllArgsConstructor
-public class Login {
+public class User {
 
-    @JsonProperty("email")
-    private String email;
+    @JsonProperty("data")
+    private Data data;
 
-    @JsonProperty("password")
-    private String password;
+    @JsonProperty("support")
+    private Support support;
 }

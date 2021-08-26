@@ -1,7 +1,7 @@
-package tests.api;
+package diplom.tests.api;
 
-import api.model.Login;
-import api.model.User;
+import diplom.model.Login;
+import diplom.model.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
@@ -14,11 +14,11 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.HashMap;
 
-import static api.spec.CustomSpec.spec;
-import static api.steps.ApiSteps.checkUserModel;
-import static api.steps.ApiSteps.extractUserAfterRequest;
-import static api.utils.Json.convertMapToJson;
-import static api.utils.Json.convertPOJOToJSON;
+import static diplom.spec.CustomSpec.spec;
+import static diplom.steps.ApiSteps.checkUserModel;
+import static diplom.steps.ApiSteps.extractUserAfterRequest;
+import static diplom.utils.Json.convertMapToJson;
+import static diplom.utils.Json.convertPOJOToJSON;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;

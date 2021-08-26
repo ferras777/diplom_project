@@ -1,4 +1,4 @@
-package ui.helpers;
+package diplom.helpers;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -9,7 +9,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static ui.config.WebConfigHelper.getWebVideoStorage;
+import static diplom.config.WebConfigHelper.getWebVideoStorage;
 
 
 public class AttachmentsHelper {

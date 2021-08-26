@@ -8,7 +8,7 @@ repositories {
 }
 
 def allureVersion = '2.14.0',
-    selenideVersion = '5.23.2',
+    selenideVersion = '5.23.3',
     junitVersion = '5.7.2',
     restAssured = '4.4.0',
     jackson = '2.12.4',
